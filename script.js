@@ -11,7 +11,7 @@ document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
 */
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -56,4 +56,20 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+  // document.querySelector('.message').textContent = 'Start guessing...';
+
+  displayMessage('Start Guessing.... 🤔');
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = number;
+  document.querySelector('.guess').value = '';
+
+  // This will control background color when game resets back to black and number width
+  document.querySelector('.body').backgroundColor = '#60b347';
+  document.querySelector('.number').style.width = '15rem';
 });
