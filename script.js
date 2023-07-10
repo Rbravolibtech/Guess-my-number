@@ -29,6 +29,12 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🏆 Correct Number!';
 
+    // This controls the CSS background color when  you win to green
+    document.querySelector('body').style.backgroundColor = '#60b347';
+
+    // This controls the CSS to the main big number on game
+    document.querySelector('number').style.width = '30rem';
+
     //When guess is too high
   } else if (guess > secretNumber) {
     if (score > 1) {
