@@ -25,16 +25,16 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // When there is no input
   if (!guess) {
-    // document.querySelector('.message').textContent = '🚫 No number!';
     displayMessage('🚫 No number!');
 
     // When player wins
   } else if (guess === secretNumber) {
-    // document.querySelector('.message').textContent = '🎉 Correct Number!';
-    displayMessage('🎉 Correct Number!');
+    displayMessage('🏆 Correct Number!');
     document.querySelector('.number').textContent = secretNumber;
 
-    document.querySelector('body').style.backgroundColor = '#60b347';
+    // This controls background to green when player wins
+
+    document.querySelector('body').style.backgroundColor = '#54399f';
     document.querySelector('.number').style.width = '30rem';
 
     if (score > highscore) {
@@ -49,7 +49,7 @@ document.querySelector('.check').addEventListener('click', function () {
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      displayMessage('💥 You lost the game!');
+      displayMessage('😱 You lost the game!');
       document.querySelector('.score').textContent = 0;
     }
   }
@@ -78,6 +78,8 @@ document.querySelector('.check').addEventListener('click', function () {
   // }
 });
 
+// This make the Again button clickable and work when you click on it
+
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -88,6 +90,7 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
 
+  // This will make background color go back to black when game has reset
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
 });

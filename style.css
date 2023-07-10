@@ -15,7 +15,7 @@ body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
   background-color: #222;
-  /* background-color: #60b347; */
+  /* background-color: #54399f;*/
 }
 
 /* LAYOUT */
@@ -106,7 +106,7 @@ h1 {
 }
 
 .btn:hover {
-  background-color: #ccc;
+  background-color: #ca1515;
 }
 
 .message {
